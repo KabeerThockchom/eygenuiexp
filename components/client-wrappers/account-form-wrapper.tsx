@@ -15,7 +15,7 @@ export const AccountFormWrapper = () => {
   if (submitted) {
     return (
       <div className="p-6 bg-secondary-main/10 text-secondary-main rounded-lg">
-        Application submitted successfully! We'll review your information and contact you soon.
+        Application submitted successfully! We&apos;ll review your information and contact you soon.
       </div>
     );
   }

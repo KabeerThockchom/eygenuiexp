@@ -58,7 +58,7 @@ export default function Home() {
                   Welcome to Your Digital Banking Assistant
                 </p>
                 <p>
-                  I'm here to help you manage your accounts, open new ones, and answer any banking-related questions you may have.
+                  I&apos;m here to help you manage your accounts, open new ones, and answer any banking-related questions you may have.
                 </p>
                 <p>
                   Choose from the suggested actions below or type your question to get started.

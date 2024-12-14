@@ -207,11 +207,11 @@ const sendMessage = async (message: string) => {
                       <h3 className="font-medium mb-2">RMD Calculator Guide</h3>
                       <p className="text-sm mb-2">
                         This calculator will help you determine your Required Minimum Distribution (RMD) 
-                        for an inherited retirement account. Here's what you'll need:
+                        for an inherited retirement account. Here&apos;s what you&apos;ll need:
                       </p>
                       <ul className="text-sm list-disc list-inside">
                         <li>Account type and balance as of December 31 last year</li>
-                        <li>Original account owner's birth and death dates</li>
+                        <li>Original account owner&apos;s birth and death dates</li>
                         <li>Your relationship to the original owner</li>
                         <li>Your date of birth</li>
                       </ul>

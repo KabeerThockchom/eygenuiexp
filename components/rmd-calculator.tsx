@@ -136,7 +136,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
         <div className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Original Owner's Date of Birth
+              Original Owner&apos;s Date of Birth
             </label>
             <input
               type="date"
@@ -147,7 +147,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Original Owner's Date of Death
+              Original Owner&apos;s Date of Death
             </label>
             <input
               type="date"
@@ -182,7 +182,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Beneficiary's Date of Birth
+              Beneficiary&apos;s Date of Birth
             </label>
             <input
               type="date"
