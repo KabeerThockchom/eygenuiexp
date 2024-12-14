@@ -29,7 +29,7 @@ export const RMDCalculatorWrapper = ({ initialData }: RMDCalculatorWrapperProps)
             to avoid potential penalties.
           </p>
           <p className="text-sm mt-2">
-            Need help setting up your withdrawal? Just ask and I'll guide you through the process.
+            Need help setting up your withdrawal? Just ask and I&apos;ll guide you through the process.
           </p>
         </div>
       </div>
