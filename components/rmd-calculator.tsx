@@ -94,11 +94,11 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
       fields: (
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Account Type
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600]"
               value={formData.accountType}
               onChange={(e) => setFormData({ ...formData, accountType: e.target.value })}
             >
@@ -111,45 +111,45 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Account Balance (as of December 31 last year)
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-2 text-gray-500">$</span>
+              <span className="absolute left-3 top-2 text-[#999999]">$</span>
               <input
                 type="number"
-                className="w-full pl-8 pr-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-8 pr-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600]"
                 value={formData.balance || ""}
                 onChange={(e) => setFormData({ ...formData, balance: parseFloat(e.target.value) || 0 })}
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Registration Type
             </label>
             <div className="flex space-x-4">
               <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  className="form-radio text-blue-600"
+                  className="form-radio text-[#ffe600] border-[#333333] dark:border-[#ffffff] focus:ring-[#ffe600] dark:focus:ring-[#ffe600]"
                   name="registrationType"
                   value="individual"
                   checked={formData.registrationType === "individual"}
                   onChange={(e) => setFormData({ ...formData, registrationType: e.target.value as "individual" | "trust" })}
                 />
-                <span className="ml-2">Individual</span>
+                <span className="ml-2 text-[#333333] dark:text-[#ffffff]">Individual</span>
               </label>
               <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  className="form-radio text-blue-600"
+                  className="form-radio text-[#ffe600] border-[#333333] dark:border-[#ffffff] focus:ring-[#ffe600] dark:focus:ring-[#ffe600]"
                   name="registrationType"
                   value="trust"
                   checked={formData.registrationType === "trust"}
                   onChange={(e) => setFormData({ ...formData, registrationType: e.target.value as "individual" | "trust" })}
                 />
-                <span className="ml-2">Trust</span>
+                <span className="ml-2 text-[#333333] dark:text-[#ffffff]">Trust</span>
               </label>
             </div>
           </div>
@@ -161,7 +161,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
       fields: (
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Original Owner&apos;s Date of Birth
             </label>
             <input
@@ -172,7 +172,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Original Owner&apos;s Date of Death
             </label>
             <input
@@ -190,7 +190,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
       fields: (
         <div className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Beneficiary Type
             </label>
             <select
@@ -207,7 +207,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
               Beneficiary&apos;s Date of Birth
             </label>
             <input
@@ -253,7 +253,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
   return (
     <BankingCard>
       <div className="p-6">
-        <h2 className="text-2xl font-semibold text-gray-800 mb-6">
+        <h2 className="text-2xl font-semibold text-[#333333] dark:text-[#ffffff] mb-6">
           RMD Calculator
         </h2>
         <div className="relative pb-12">
@@ -268,14 +268,14 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
         </div>
         <div className="mt-8 flex justify-between">
           <button
-            className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+            className="px-4 py-2 text-sm font-medium text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff] border border-[#cccccc] dark:border-[#cccccc] rounded-md shadow-sm hover:bg-[#cccccc] dark:hover:bg-[#cccccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffe600]"
             onClick={handleBack}
             disabled={currentStep === 0}
           >
             Back
           </button>
           <button
-            className="px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="px-4 py-2 text-sm font-medium text-[#333333] dark:text-[#333333] bg-[#ffe600] dark:bg-[#ffe600] border border-transparent rounded-md shadow-sm hover:bg-[#cccccc] dark:hover:bg-[#cccccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffe600] disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={handleNext}
             disabled={!isStepValid()}
           >

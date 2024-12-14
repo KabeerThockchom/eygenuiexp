@@ -1,32 +1,32 @@
 export const theme = {
   colors: {
     primary: {
-      main: "#1E4D8C", // Professional banking blue
-      light: "#2463B5",
-      dark: "#163969",
+      main: "#333333", // EY dark gray
+      light: "#999999", // EY light gray
+      dark: "#000000", // Darker shade for depth
       contrast: "#FFFFFF",
     },
     secondary: {
-      main: "#17B26A", // Success/action green
-      light: "#1FCF7C",
-      dark: "#149655",
-      contrast: "#FFFFFF",
+      main: "#FFE600", // EY yellow
+      light: "#FFF133", // Lighter yellow
+      dark: "#E6CF00", // Darker yellow
+      contrast: "#333333", // Dark text for contrast on yellow
     },
     neutral: {
-      50: "#F8FAFC",
-      100: "#F1F5F9",
-      200: "#E2E8F0",
-      300: "#CBD5E1",
-      400: "#94A3B8",
-      500: "#64748B",
-      600: "#475569",
-      700: "#334155",
-      800: "#1E293B",
-      900: "#0F172A",
+      50: "#FFFFFF",
+      100: "#F5F5F5",
+      200: "#CCCCCC",
+      300: "#B3B3B3",
+      400: "#999999",
+      500: "#808080",
+      600: "#666666",
+      700: "#4D4D4D",
+      800: "#333333",
+      900: "#1A1A1A",
     },
-    error: "#DC2626",
-    warning: "#F59E0B",
-    info: "#3B82F6",
+    error: "#FF3333",
+    warning: "#FFE600", // Using EY yellow for warning
+    info: "#999999", // Using EY light gray for info
   },
   typography: {
     fontFamily: {
@@ -63,4 +63,4 @@ export const theme = {
     xl: "0.75rem",
     "2xl": "1rem",
   },
-}; 
+};

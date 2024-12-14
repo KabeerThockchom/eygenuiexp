@@ -64,14 +64,14 @@ const sendMessage = async (message: string) => {
   const textComponent = <TextStreamMessage content={contentStream.value} />;
 
   const { value: stream } = await streamUI({
-    model: openai("gpt-4o-mini"),
+    model: openai("gpt-4o"),
     system: `\
       You are an expert banking assistant specializing in Required Minimum Distributions (RMDs) and account management.
 
       Always start your first message by greeting the user by their name with friendly emojis. For example: "Hi {name}! 👋 Great to see you! 🌟"
 
       For RMD Calculations:
-      - When users ask about RMDs, first explain what they are and their importance
+      - When users ask about RMDs:
       - Present the RMD calculator tool and explain how to use it
       - When prefilling data for the RMD calculator, use these exact formats:
         * Account types: *Traditional IRA*, *Roth IRA*, *401(k)*, *403(b)*, *457(b)*
@@ -211,7 +211,7 @@ const sendMessage = async (message: string) => {
               content={
                 <>
                   {showGuidance && (
-                    <div className="mb-6 p-4 bg-blue-50 text-blue-700 rounded-lg">
+                    <div className="mb-6 p-4 bg-neutral-800 text-neutral-50 rounded-lg">
                       <h3 className="font-medium mb-2">RMD Calculator Guide</h3>
                       <p className="text-sm mb-2">
                         This calculator will help you determine your Required Minimum Distribution (RMD) 

@@ -21,7 +21,7 @@ export const RMDCalculatorWrapper = ({ initialData }: RMDCalculatorWrapperProps)
     setResult(
       <div className="space-y-6">
         <RMDResult formData={formData} rmdAmount={rmdAmount} />
-        <div className="p-4 bg-blue-50 text-blue-700 rounded-lg">
+        <div className="p-4 bg-[#ffe600] text-[#333333] rounded-lg">
           <h3 className="font-medium mb-2">Understanding Your RMD</h3>
           <p className="text-sm">
             Based on your information, your Required Minimum Distribution (RMD) for this year 

@@ -135,9 +135,9 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
               {accountTypes.map((type) => (
                 <label
                   key={type.id}
-                  className={`p-4 border rounded-lg cursor-pointer hover:bg-neutral-50 transition-all ${
+                  className={`p-4 border rounded-lg cursor-pointer hover:bg-[#cccccc]/10 transition-all ${
                     formData.accountType === type.id
-                      ? "border-primary-main ring-2 ring-primary-light ring-opacity-50"
+                      ? "border-[#333333] ring-2 ring-[#999999] ring-opacity-50"
                       : ""
                   }`}
                 >
@@ -153,21 +153,21 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
                   />
                   <div className="flex flex-col h-full">
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="p-2 bg-primary-main/10 text-primary-main rounded-lg">
+                      <div className="p-2 bg-[#333333]/10 text-[#333333] rounded-lg">
                         <type.icon className="w-6 h-6" />
                       </div>
-                      <h3 className="font-medium text-neutral-900">{type.name}</h3>
+                      <h3 className="font-medium text-[#333333]">{type.name}</h3>
                     </div>
-                    <p className="text-sm text-neutral-600 mb-4">
+                    <p className="text-sm text-[#999999] mb-4">
                       {type.description}
                     </p>
                     <ul className="mt-auto space-y-2">
                       {type.features.map((feature) => (
                         <li
                           key={feature}
-                          className="flex items-center gap-2 text-sm text-neutral-600"
+                          className="flex items-center gap-2 text-sm text-[#999999]"
                         >
-                          <CheckCircleIcon className="w-4 h-4 text-secondary-main" />
+                          <CheckCircleIcon className="w-4 h-4 text-[#ffe600]" />
                           {feature}
                         </li>
                       ))}
@@ -183,12 +183,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
           <div className="space-y-6">
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-[#333333] mb-2">
                   First Name
                 </label>
                 <input
                   type="text"
-                  className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                  className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                   value={formData.personalInfo.firstName}
                   onChange={(e) =>
                     setFormData({
@@ -203,12 +203,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-[#333333] mb-2">
                   Last Name
                 </label>
                 <input
                   type="text"
-                  className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                  className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                   value={formData.personalInfo.lastName}
                   onChange={(e) =>
                     setFormData({
@@ -224,12 +224,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
               </div>
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-2">
+              <label className="block text-sm font-medium text-[#333333] mb-2">
                 Email Address
               </label>
               <input
                 type="email"
-                className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                 value={formData.personalInfo.email}
                 onChange={(e) =>
                   setFormData({
@@ -244,12 +244,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-neutral-700 mb-2">
+              <label className="block text-sm font-medium text-[#333333] mb-2">
                 Phone Number
               </label>
               <input
                 type="tel"
-                className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                 value={formData.personalInfo.phone}
                 onChange={(e) =>
                   setFormData({
@@ -265,12 +265,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
             </div>
             <div className="grid grid-cols-2 gap-4">
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-[#333333] mb-2">
                   Date of Birth
                 </label>
                 <input
                   type="date"
-                  className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                  className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                   value={formData.personalInfo.dateOfBirth}
                   onChange={(e) =>
                     setFormData({
@@ -285,12 +285,12 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-neutral-700 mb-2">
+                <label className="block text-sm font-medium text-[#333333] mb-2">
                   Social Security Number
                 </label>
                 <input
                   type="password"
-                  className="w-full p-3 border rounded-lg bg-white border-neutral-200 focus:border-primary-main focus:ring-2 focus:ring-primary-light focus:ring-opacity-50 transition-colors"
+                  className="w-full p-3 border rounded-lg bg-[#ffffff] border-[#cccccc] focus:border-[#333333] focus:ring-2 focus:ring-[#999999] focus:ring-opacity-50 transition-colors"
                   value={formData.personalInfo.ssn}
                   onChange={(e) =>
                     setFormData({
@@ -317,24 +317,24 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
     <BankingCard className="max-w-3xl mx-auto">
       <div className="space-y-8">
         <div>
-          <h2 className="text-2xl font-bold text-neutral-900 mb-2">
+          <h2 className="text-2xl font-bold text-[#333333] mb-2">
             Open a New Account
           </h2>
-          <p className="text-neutral-600">
+          <p className="text-[#999999]">
             Complete the application to open your account. It only takes a few minutes.
           </p>
         </div>
 
-        <div className="flex items-center gap-3 p-4 bg-primary-main/5 rounded-lg">
-          <ShieldCheckIcon className="w-6 h-6 text-primary-main" />
-          <p className="text-sm text-neutral-700">
+        <div className="flex items-center gap-3 p-4 bg-[#333333]/5 rounded-lg">
+          <ShieldCheckIcon className="w-6 h-6 text-[#333333]" />
+          <p className="text-sm text-[#333333]">
             Your information is secure and encrypted
           </p>
         </div>
 
         <Stepper steps={steps} currentStep={currentStep} className="mb-8" />
 
-        <div className="bg-white rounded-xl p-6 border border-neutral-200">
+        <div className="bg-[#ffffff] rounded-xl p-6 border border-[#cccccc]">
           <form onSubmit={handleSubmit} className="space-y-8">
             {renderStepContent()}
 
@@ -342,7 +342,7 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
               <button
                 type="button"
                 onClick={handleBack}
-                className={`px-6 py-2 rounded-lg border border-neutral-200 text-neutral-700 hover:bg-neutral-50 transition-colors ${
+                className={`px-6 py-2 rounded-lg border border-[#cccccc] text-[#333333] hover:bg-[#cccccc]/10 transition-colors ${
                   currentStep === 0 ? "invisible" : ""
                 }`}
               >
@@ -351,7 +351,7 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
               {currentStep === steps.length - 1 ? (
                 <button
                   type="submit"
-                  className="px-6 py-2 rounded-lg bg-primary-main text-white hover:bg-primary-dark transition-colors"
+                  className="px-6 py-2 rounded-lg bg-[#333333] text-[#ffffff] hover:bg-[#333333]/90 transition-colors"
                 >
                   Submit Application
                 </button>
@@ -359,7 +359,7 @@ export const OpenAccountForm = ({ onSubmit }: { onSubmit: (data: AccountOpeningD
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="px-6 py-2 rounded-lg bg-primary-main text-white hover:bg-primary-dark transition-colors"
+                  className="px-6 py-2 rounded-lg bg-[#333333] text-[#ffffff] hover:bg-[#333333]/90 transition-colors"
                 >
                   Continue
                 </button>

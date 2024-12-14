@@ -24,19 +24,20 @@ export const Stepper = ({ steps, currentStep, className = "" }: StepperProps) =>
                 className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium
                   ${
                     isCompleted
-                      ? "bg-secondary-main text-white"
+                      ? "bg-[#999999] text-[#ffffff]"
                       : isCurrent
-                      ? "bg-primary-main text-white"
-                      : "bg-neutral-200 text-neutral-600"
+                      ? "bg-[#ffe600] text-[#333333]"
+                      : "bg-[#cccccc] text-[#333333]"
                   }`}
                 initial={false}
                 animate={{
                   scale: isCurrent ? 1.1 : 1,
                   backgroundColor: isCompleted
-                    ? theme.colors.secondary.main
+                    ? "#999999"
                     : isCurrent
-                    ? theme.colors.primary.main
-                    : theme.colors.neutral[200],
+                    ? "#ffe600"
+                    : "#cccccc",
+                  opacity: 1
                 }}
               >
                 {isCompleted ? (
@@ -46,13 +47,13 @@ export const Stepper = ({ steps, currentStep, className = "" }: StepperProps) =>
                 )}
               </motion.div>
               <span
-                className={`mt-2 text-xs
+                className={`mt-2 text-xs font-medium
                   ${
                     isCompleted
-                      ? "text-secondary-main"
+                      ? "text-[#999999]"
                       : isCurrent
-                      ? "text-primary-main"
-                      : "text-neutral-600"
+                      ? "text-[#ffe600]"
+                      : "text-[#333333]"
                   }`}
               >
                 {step}
@@ -63,8 +64,8 @@ export const Stepper = ({ steps, currentStep, className = "" }: StepperProps) =>
                 className={`h-0.5 w-16 mx-4
                   ${
                     index < currentStep
-                      ? "bg-secondary-main"
-                      : "bg-neutral-200"
+                      ? "bg-[#999999]"
+                      : "bg-[#cccccc]"
                   }`}
               />
             )}

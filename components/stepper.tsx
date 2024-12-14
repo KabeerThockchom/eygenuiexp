@@ -22,10 +22,10 @@ export const Stepper = ({
               flex items-center justify-center w-8 h-8 rounded-full text-sm font-medium
               ${
                 index === currentStep
-                  ? "bg-blue-600 text-white"
+                  ? "bg-[#ffe600] text-[#333333]"
                   : index < currentStep
-                  ? "bg-blue-100 text-blue-600"
-                  : "bg-gray-100 text-gray-400"
+                  ? "bg-[#999999] text-[#ffffff]"
+                  : "bg-[#cccccc] text-[#333333]"
               }
               ${onStepClick ? "cursor-pointer hover:opacity-80" : "cursor-default"}
               transition-colors duration-200
@@ -39,10 +39,10 @@ export const Stepper = ({
                 flex-1 h-0.5 mx-2
                 ${
                   index < currentStep
-                    ? "bg-blue-600"
+                    ? "bg-[#999999]"
                     : index === currentStep
-                    ? "bg-blue-200"
-                    : "bg-gray-200"
+                    ? "bg-[#ffe600]"
+                    : "bg-[#cccccc]"
                 }
               `}
             />
@@ -52,10 +52,10 @@ export const Stepper = ({
               absolute top-10 text-xs font-medium whitespace-nowrap
               ${
                 index === currentStep
-                  ? "text-blue-600"
+                  ? "text-[#ffe600]"
                   : index < currentStep
-                  ? "text-blue-600"
-                  : "text-gray-400"
+                  ? "text-[#999999]"
+                  : "text-[#333333]"
               }
               ${index === 0 ? "left-0" : index === steps.length - 1 ? "right-0" : ""}
               ${

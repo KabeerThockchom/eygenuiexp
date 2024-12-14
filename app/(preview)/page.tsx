@@ -19,20 +19,20 @@ export default function Welcome() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-white dark:bg-zinc-900">
+    <div className="flex items-center justify-center min-h-screen bg-[#ffffff] dark:bg-[#333333]">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="w-full max-w-md p-6"
       >
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-neutral-900 dark:text-zinc-50 mb-4 relative inline-block">
+          <h1 className="text-4xl font-bold text-[#333333] dark:text-[#ffffff] mb-4 relative inline-block">
             Welcome to Bank Assist
             <AutoAwesomeIcon 
-              className="absolute -top-3 -right-0 text-yellow-400 text-4xl animate-pulse" 
+              className="absolute -top-3 -right-0 text-[#ffe600] text-4xl animate-pulse" 
             />
           </h1>
-          <p className="text-zinc-600 dark:text-zinc-400">
+          <p className="text-[#999999] dark:text-[#cccccc]">
             Let&apos;s personalize your experience
           </p>
         </div>
@@ -41,7 +41,7 @@ export default function Welcome() {
           <div>
             <label 
               htmlFor="name" 
-              className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
+              className="block text-sm font-medium text-[#999999] dark:text-[#cccccc] mb-2"
             >
               What&apos;s your name?
             </label>
@@ -50,7 +50,7 @@ export default function Welcome() {
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-3 rounded-lg border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 focus:ring-2 focus:ring-primary-main focus:border-transparent"
+              className="w-full px-4 py-3 rounded-lg border border-[#cccccc] dark:border-[#999999] bg-[#ffffff] dark:bg-[#333333] text-[#333333] dark:text-[#ffffff] focus:ring-2 focus:ring-[#ffe600] focus:border-transparent"
               placeholder="Enter your name"
               required
             />
@@ -58,7 +58,7 @@ export default function Welcome() {
 
           <button
             type="submit"
-            className="w-full bg-primary-main text-white py-3 px-4 rounded-lg hover:bg-primary-dark transition-colors"
+            className="w-full bg-[#ffe600] text-[#333333] py-3 px-4 rounded-lg hover:bg-[#cccccc] transition-colors"
           >
             Continue to Banking
           </button>

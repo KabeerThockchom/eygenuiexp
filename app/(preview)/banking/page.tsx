@@ -85,7 +85,7 @@ export default function Banking() {
   };
 
   return (
-    <div className="flex flex-row justify-center pb-20 h-dvh bg-white dark:bg-zinc-900">
+    <div className="flex flex-row justify-center pb-20 h-dvh bg-[#ffffff] dark:bg-[#333333]">
       <div className="flex flex-col justify-between gap-4">
         <div
           ref={messagesContainerRef}
@@ -93,11 +93,11 @@ export default function Banking() {
         >
           {!hasUserInteracted && (
             <motion.div className="min-h-[200px] px-4 w-full md:w-[500px] md:px-0 pt-8">
-              <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
-                <p className="text-center text-2xl font-medium text-neutral-900 dark:text-zinc-50 relative inline-block">
+              <div className="border rounded-lg p-6 flex flex-col gap-4 text-[#999999] text-sm dark:text-[#cccccc] dark:border-[#999999]">
+                <p className="text-center text-2xl font-medium text-[#333333] dark:text-[#ffffff] relative inline-block">
                   Welcome to Your Bank Assist
                   <AutoAwesomeIcon 
-                    className="absolute -top-2 text-yellow-400 text-2xl animate-pulse" 
+                    className="absolute -top-2 text-[#ffe600] text-2xl animate-pulse" 
                   />
                 </p>
                 <p>
@@ -124,13 +124,13 @@ export default function Banking() {
               >
                 <button
                   onClick={() => handleActionClick(action.action)}
-                  className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-4 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col gap-2"
+                  className="w-full text-left border border-[#cccccc] dark:border-[#999999] text-[#333333] dark:text-[#cccccc] rounded-lg p-4 text-sm hover:bg-[#f0f0f0] hover:text-[#333333] dark:hover:bg-[#999999] transition-colors flex flex-col gap-2"
                 >
                   <div className="flex items-center gap-2">
-                    <action.icon className="w-5 h-5 text-primary-main" />
+                    <action.icon className="w-5 h-5 text-[#ffe600]" />
                     <span className="font-medium">{action.title}</span>
                   </div>
-                  <span className="text-zinc-500 dark:text-zinc-400">
+                  <span className="text-[#999999] dark:text-[#cccccc]">
                     {action.label}
                   </span>
                 </button>
@@ -159,7 +159,7 @@ export default function Banking() {
         >
           <input
             ref={inputRef}
-            className="bg-zinc-100 rounded-md px-4 py-3 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
+            className="bg-[#f0f0f0] rounded-md px-4 py-3 w-full outline-none focus:ring-2 focus:ring-[#ffe600] focus:ring-opacity-100 dark:focus:ring-[#ffe600] dark:focus:ring-opacity-100 dark:bg-[#999999] text-[#333333] dark:text-[#ffffff] md:max-w-[500px] max-w-[calc(100dvw-32px)] placeholder:text-[#666666] dark:placeholder:text-[#e6e6e6]"
             placeholder="Ask me about your banking needs..."
             value={input}
             onChange={(event) => {
