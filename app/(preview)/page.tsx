@@ -33,7 +33,7 @@ export default function Welcome() {
             />
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400">
-            Let's personalize your experience
+            Let&apos;s personalize your experience
           </p>
         </div>
 
