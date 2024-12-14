@@ -64,7 +64,7 @@ const sendMessage = async (message: string) => {
   const textComponent = <TextStreamMessage content={contentStream.value} />;
 
   const { value: stream } = await streamUI({
-    model: openai("gpt-4"),
+    model: openai("gpt-4o-mini"),
     system: `\
       You are an expert banking assistant specializing in Required Minimum Distributions (RMDs) and account management.
 
