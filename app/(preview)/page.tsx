@@ -29,7 +29,7 @@ export default function Welcome() {
           <h1 className="text-4xl font-bold text-neutral-900 dark:text-zinc-50 mb-4 relative inline-block">
             Welcome to Bank Assist
             <AutoAwesomeIcon 
-              className="absolute -top-2 -right-10 text-yellow-400 text-4xl animate-pulse" 
+              className="absolute -top-3 -right-0 text-yellow-400 text-4xl animate-pulse" 
             />
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400">
