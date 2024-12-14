@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export default function Welcome() {
   const [name, setName] = useState("");
@@ -25,8 +26,11 @@ export default function Welcome() {
         className="w-full max-w-md p-6"
       >
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-neutral-900 dark:text-zinc-50 mb-4">
-            Welcome to Digital Banking
+          <h1 className="text-4xl font-bold text-neutral-900 dark:text-zinc-50 mb-4 relative inline-block">
+            Welcome to Bank Assist
+            <AutoAwesomeIcon 
+              className="absolute -top-4 -right-0 text-yellow-400 text-4xl animate-pulse" 
+            />
           </h1>
           <p className="text-zinc-600 dark:text-zinc-400">
             Let's personalize your experience
