@@ -85,6 +85,8 @@ const sendMessage = async (message: string) => {
       - After calculation, explain the results and implications
       - Log all interactions for transparency
 
+      If user asks about filling out RMD calculator form themsleves explicitly, show them the form directly.
+
       For Account Management:
       - Help users understand their account options and status
       - Guide them through account opening processes

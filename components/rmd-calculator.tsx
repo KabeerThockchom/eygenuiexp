@@ -92,7 +92,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
               Account Type
             </label>
             <select
-              className="w-full px-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600]"
+              className="w-full px-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600] text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
               value={formData.accountType}
               onChange={(e) => setFormData({ ...formData, accountType: e.target.value })}
             >
@@ -112,7 +112,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
               <span className="absolute left-3 top-2 text-[#999999]">$</span>
               <input
                 type="number"
-                className="w-full pl-8 pr-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600]"
+                className="w-full pl-8 pr-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600] text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
                 value={formData.balance || ""}
                 onChange={(e) => setFormData({ ...formData, balance: parseFloat(e.target.value) || 0 })}
               />
@@ -160,7 +160,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
               value={formData.originalOwnerBirthDate}
               onChange={(e) => setFormData({ ...formData, originalOwnerBirthDate: e.target.value })}
             />
@@ -171,7 +171,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
               value={formData.originalOwnerDeathDate}
               onChange={(e) => setFormData({ ...formData, originalOwnerDeathDate: e.target.value })}
             />
@@ -188,7 +188,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
               Beneficiary Type
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
               value={formData.beneficiaryType}
               onChange={(e) => setFormData({ ...formData, beneficiaryType: e.target.value })}
             >
@@ -206,7 +206,7 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
               value={formData.beneficiaryBirthDate}
               onChange={(e) => setFormData({ ...formData, beneficiaryBirthDate: e.target.value })}
             />
