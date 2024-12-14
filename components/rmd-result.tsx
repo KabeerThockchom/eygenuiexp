@@ -87,7 +87,7 @@ export const RMDResult = ({ formData, rmdAmount }: RMDResultProps) => {
       <BankingCard>
         <div className="space-y-6">
           <div>
-            <h3 className="text-xl font-semibold text-neutral-900 mb-2">We'd Love Your Feedback</h3>
+            <h3 className="text-xl font-semibold text-neutral-900 mb-2">We&apos;d Love Your Feedback</h3>
             <p className="text-neutral-600">
               Help us improve your experience with the Inherited RMD Calculator
             </p>
