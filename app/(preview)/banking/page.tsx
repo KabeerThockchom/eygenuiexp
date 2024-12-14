@@ -7,6 +7,7 @@ import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
 import { BanknotesIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export default function Banking() {
   const router = useRouter();
@@ -93,8 +94,11 @@ export default function Banking() {
           {!hasUserInteracted && (
             <motion.div className="min-h-[200px] px-4 w-full md:w-[500px] md:px-0 pt-8">
               <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
-                <p className="text-center text-2xl font-medium text-neutral-900 dark:text-zinc-50">
-                  Welcome to Your Digital Banking
+                <p className="text-center text-2xl font-medium text-neutral-900 dark:text-zinc-50 relative inline-block">
+                  Welcome to Your Bank Assist
+                  <AutoAwesomeIcon 
+                    className="absolute -top-2 text-yellow-400 text-2xl animate-pulse" 
+                  />
                 </p>
                 <p>
                   I&apos;m here to help you manage your accounts, open new ones, and answer any banking-related questions you may have.
