@@ -11,6 +11,11 @@ interface RMDResultProps {
   rmdAmount: number;
 }
 
+const formatDisplayDate = (dateString: string): string => {
+  const date = new Date(dateString + 'T00:00:00Z');
+  return date.toLocaleDateString();
+};
+
 export const RMDResult = ({ formData, rmdAmount }: RMDResultProps) => {
   return (
     <div className="max-w-3xl mx-auto space-y-6">
@@ -60,9 +65,9 @@ export const RMDResult = ({ formData, rmdAmount }: RMDResultProps) => {
           <div>
             <div className="text-sm font-medium text-neutral-600">Original Owner Information</div>
             <div className="mt-1 text-neutral-900">
-              Born: {new Date(formData.originalOwnerBirthDate).toLocaleDateString()}
+              Born: {formatDisplayDate(formData.originalOwnerBirthDate)}
               <br />
-              Died: {new Date(formData.originalOwnerDeathDate).toLocaleDateString()}
+              Died: {formatDisplayDate(formData.originalOwnerDeathDate)}
             </div>
           </div>
           <div>
@@ -78,7 +83,7 @@ export const RMDResult = ({ formData, rmdAmount }: RMDResultProps) => {
           <div>
             <div className="text-sm font-medium text-neutral-600">Your Date of Birth</div>
             <div className="mt-1 text-neutral-900">
-              {new Date(formData.beneficiaryBirthDate).toLocaleDateString()}
+              {formatDisplayDate(formData.beneficiaryBirthDate)}
             </div>
           </div>
         </div>
