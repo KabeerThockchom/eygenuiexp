@@ -21,21 +21,40 @@ interface RMDCalculatorProps {
 
 const formatDateForInput = (dateString: string): string => {
   if (!dateString) return "";
+  
+  // If already in YYYY-MM-DD format, return as is
+  if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
+    return dateString;
+  }
+  
   // Convert MM/DD/YYYY to YYYY-MM-DD
   const [month, day, year] = dateString.split("/");
-  if (!month || !day || !year) return "";
+  if (!month || !day || !year) return dateString; // Return original if not in expected format
   return `${year.padStart(4, '20')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
 };
 
 const normalizeAccountType = (type: string): string => {
-  const mapping: { [key: string]: string } = {
-    'Roth IRA': 'roth-ira',
+  // First denormalize any kebab-case values
+  const denormalizeMap: { [key: string]: string } = {
+    'traditional-ira': 'Traditional IRA',
+    'roth-ira': 'Roth IRA',
+    '401k': '401(k)',
+    '403b': '403(b)',
+    '457b': '457(b)'
+  };
+
+  // Then normalize display values
+  const normalizeMap: { [key: string]: string } = {
     'Traditional IRA': 'traditional-ira',
+    'Roth IRA': 'roth-ira',
     '401(k)': '401k',
     '403(b)': '403b',
     '457(b)': '457b'
   };
-  return mapping[type] || type;
+
+  // If it's already normalized, denormalize then normalize to ensure consistency
+  const displayValue = denormalizeMap[type] || type;
+  return normalizeMap[displayValue] || type.toLowerCase().replace(/\s+/g, '-');
 };
 
 export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) => {
