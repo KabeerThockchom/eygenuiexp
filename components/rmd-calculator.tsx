@@ -22,16 +22,22 @@ interface RMDCalculatorProps {
 const formatDateForInput = (dateString: string): string => {
   if (!dateString) return "";
   
-  // If already in YYYY-MM-DD format, return as is
+  // If already in YYYY-MM-DD format, adjust for timezone
   if (/^\d{4}-\d{2}-\d{2}$/.test(dateString)) {
-    return dateString;
+    const date = new Date(dateString);
+    // Add timezone offset to get the correct local date
+    date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+    return date.toISOString().split('T')[0];
   }
   
   // Convert MM/DD/YYYY to YYYY-MM-DD
   const [month, day, year] = dateString.split("/");
   if (!month || !day || !year) return dateString;
   
-  return `${year.padStart(4, '20')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
+  // Create date and adjust for timezone
+  const date = new Date(`${year.padStart(4, '20')}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`);
+  date.setMinutes(date.getMinutes() + date.getTimezoneOffset());
+  return date.toISOString().split('T')[0];
 };
 
 const normalizeAccountType = (type: string): string => {

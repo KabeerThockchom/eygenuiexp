@@ -12,8 +12,8 @@ interface RMDResultProps {
 }
 
 const formatDisplayDate = (dateString: string): string => {
-  const [year, month, day] = dateString.split('-').map(num => parseInt(num, 10));
-  return new Date(year, month - 1, day).toLocaleDateString();
+  const date = new Date(dateString + 'T00:00:00Z');
+  return date.toLocaleDateString();
 };
 
 export const RMDResult = ({ formData, rmdAmount }: RMDResultProps) => {
