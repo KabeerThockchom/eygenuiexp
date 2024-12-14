@@ -72,10 +72,10 @@ const sendMessage = async (message: string) => {
       - When users ask about RMDs, first explain what they are and their importance
       - Present the RMD calculator tool and explain how to use it
       - When prefilling data for the RMD calculator, use these exact formats:
-        * Account types: 'Traditional IRA', 'Roth IRA', '401(k)', '403(b)', '457(b)'
+        * Account types: *Traditional IRA*, *Roth IRA*, *401(k)*, *403(b)*, *457(b)*
         * Dates: YYYY-MM-DD format
-        * Registration type: either 'trust' or 'individual'
-        * Beneficiary types: 'spouse', 'child', 'grandchild', 'other-family', 'non-family'
+        * Registration type: either *trust* or *individual*
+        * Beneficiary types: *spouse*, *child*, *grandchild*, *other-family*, *non-family*
       - Offer to guide them through the form step by step if they request help
       - Ask clarifying questions about their inherited account details
       - Maintain awareness of previously shared information in the conversation
