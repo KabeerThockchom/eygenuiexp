@@ -5,7 +5,7 @@ import { useActions } from "ai/rsc";
 import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
-import { MasonryIcon, VercelIcon } from "@/components/icons";
+import { BanknotesIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
 export default function Home() {
@@ -15,21 +15,32 @@ export default function Home() {
   const [messages, setMessages] = useState<Array<ReactNode>>([]);
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const [messagesContainerRef, messagesEndRef] =
-    useScrollToBottom<HTMLDivElement>();
+  const [messagesContainerRef, messagesEndRef] = useScrollToBottom<HTMLDivElement>();
 
   const suggestedActions = [
-    { title: "View all", label: "my cameras", action: "View all my cameras" },
-    { title: "Show me", label: "my smart home hub", action: "Show me my smart home hub" },
-    {
-      title: "How much",
-      label: "electricity have I used this month?",
-      action: "Show electricity usage",
+    { 
+      title: "Show me", 
+      label: "my accounts overview", 
+      action: "Show me my accounts overview",
+      icon: BanknotesIcon
+    },
+    { 
+      title: "I'd like to", 
+      label: "open a new account", 
+      action: "I want to open a new account",
+      icon: PlusCircleIcon
     },
     {
-      title: "How much",
-      label: "water have I used this month?",
-      action: "Show water usage",
+      title: "Calculate",
+      label: "my RMD for inherited account",
+      action: "Help me calculate my Required Minimum Distribution",
+      icon: BanknotesIcon
+    },
+    {
+      title: "What are",
+      label: "the current account options?",
+      action: "What types of accounts do you offer?",
+      icon: PlusCircleIcon
     },
   ];
 
@@ -43,27 +54,14 @@ export default function Home() {
           {messages.length === 0 && (
             <motion.div className="h-[350px] px-4 w-full md:w-[500px] md:px-0 pt-20">
               <div className="border rounded-lg p-6 flex flex-col gap-4 text-zinc-500 text-sm dark:text-zinc-400 dark:border-zinc-700">
-                <p className="flex flex-row justify-center gap-4 items-center text-zinc-900 dark:text-zinc-50">
-                  <VercelIcon size={16} />
-                  <span>+</span>
-                  <MasonryIcon />
+                <p className="text-center text-xl font-medium text-neutral-900 dark:text-zinc-50">
+                  Welcome to Your Digital Banking Assistant
                 </p>
                 <p>
-                  The streamUI function allows you to stream React Server
-                  Components along with your language model generations to
-                  integrate dynamic user interfaces into your application.
+                  I'm here to help you manage your accounts, open new ones, and answer any banking-related questions you may have.
                 </p>
                 <p>
-                  {" "}
-                  Learn more about the{" "}
-                  <Link
-                    className="text-blue-500 dark:text-blue-400"
-                    href="https://sdk.vercel.ai/docs/ai-sdk-rsc/streaming-react-components"
-                    target="_blank"
-                  >
-                    streamUI{" "}
-                  </Link>
-                  hook from Vercel AI SDK.
+                  Choose from the suggested actions below or type your question to get started.
                 </p>
               </div>
             </motion.div>
@@ -97,9 +95,12 @@ export default function Home() {
                     );
                     setMessages((messages) => [...messages, response]);
                   }}
-                  className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-2 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col"
+                  className="w-full text-left border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 rounded-lg p-4 text-sm hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors flex flex-col gap-2"
                 >
-                  <span className="font-medium">{action.title}</span>
+                  <div className="flex items-center gap-2">
+                    <action.icon className="w-5 h-5 text-primary-main" />
+                    <span className="font-medium">{action.title}</span>
+                  </div>
                   <span className="text-zinc-500 dark:text-zinc-400">
                     {action.label}
                   </span>
@@ -125,8 +126,8 @@ export default function Home() {
         >
           <input
             ref={inputRef}
-            className="bg-zinc-100 rounded-md px-2 py-1.5 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
-            placeholder="Send a message..."
+            className="bg-zinc-100 rounded-md px-4 py-3 w-full outline-none dark:bg-zinc-700 text-zinc-800 dark:text-zinc-300 md:max-w-[500px] max-w-[calc(100dvw-32px)]"
+            placeholder="Ask me about your banking needs..."
             value={input}
             onChange={(event) => {
               setInput(event.target.value);
