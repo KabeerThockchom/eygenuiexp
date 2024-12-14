@@ -6,7 +6,7 @@ import { useActions } from "ai/rsc";
 import { Message } from "@/components/message";
 import { useScrollToBottom } from "@/components/use-scroll-to-bottom";
 import { motion } from "framer-motion";
-import { BanknotesIcon, PlusCircleIcon } from "@heroicons/react/24/outline";
+import { BanknotesIcon, PlusCircleIcon, CalculatorIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export default function Banking() {
@@ -57,13 +57,13 @@ export default function Banking() {
       title: "Calculate",
       label: "my RMD for inherited account",
       action: "Help me calculate my Required Minimum Distribution",
-      icon: BanknotesIcon
+      icon: CalculatorIcon
     },
     {
       title: "What are",
       label: "the current account options?",
       action: "What types of accounts do you offer?",
-      icon: PlusCircleIcon
+      icon: UserCircleIcon
     },
   ];
 
