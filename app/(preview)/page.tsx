@@ -43,7 +43,7 @@ export default function Welcome() {
               htmlFor="name" 
               className="block text-sm font-medium text-zinc-700 dark:text-zinc-300 mb-2"
             >
-              What's your name?
+              What&apos;s your name?
             </label>
             <input
               type="text"

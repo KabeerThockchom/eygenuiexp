@@ -37,7 +37,7 @@ export default function Banking() {
         content={`Hi ${storedName}! 👋 Great to see you! ⭐ How can I assist you today?`}
       />
     ]);
-  }, []);
+  }, [router]);
 
   const suggestedActions = [
     { 
