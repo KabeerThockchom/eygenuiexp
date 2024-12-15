@@ -8,7 +8,7 @@ export const CameraView = () => {
       <div className="flex flex-col gap-2">
         <div className="flex flex-row gap-2">
           <motion.div
-            className="h-58 w-72 dark:bg-zinc-800 bg-zinc-100 rounded-lg p-2 flex flex-col justify-end"
+            className="h-58 w-72 bg-primary rounded-lg p-2 flex flex-col justify-end"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -18,14 +18,14 @@ export const CameraView = () => {
               background: `url('/yard.jpg') no-repeat center center / cover`,
             }}
           >
-            <div className="text-xs px-1 py-0.5 bg-white text-zinc-900 w-fit rounded-md">
+            <div className="text-xs px-1 py-0.5 bg-neutral-50 text-neutral-500 w-fit rounded-md">
               Front Yard
             </div>
           </motion.div>
 
           <div className="flex flex-col gap-2">
             <motion.div
-              className="h-28 w-52 dark:bg-zinc-800 bg-zinc-100 rounded-lg flex flex-col justify-end p-2"
+              className="h-28 w-52 bg-primary rounded-lg flex flex-col justify-end p-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -35,12 +35,12 @@ export const CameraView = () => {
                 background: `url('/patio.jpg') no-repeat center center / cover`,
               }}
             >
-              <div className="text-xs px-1 py-0.5 bg-white text-zinc-900 w-fit rounded-md">
+              <div className="text-xs px-1 py-0.5 bg-neutral-50 text-neutral-500 w-fit rounded-md">
                 Patio
               </div>
             </motion.div>
             <motion.div
-              className="h-28 w-52 dark:bg-zinc-800 bg-zinc-100 rounded-lg flex flex-col justify-end p-2"
+              className="h-28 w-52 bg-primary rounded-lg flex flex-col justify-end p-2"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
@@ -50,7 +50,7 @@ export const CameraView = () => {
                 background: `url('/side.jpg') no-repeat center center / cover`,
               }}
             >
-              <div className="text-xs px-1 py-0.5 bg-white text-zinc-900 w-fit rounded-md">
+              <div className="text-xs px-1 py-0.5 bg-neutral-50 text-neutral-500 w-fit rounded-md">
                 Side
               </div>
             </motion.div>

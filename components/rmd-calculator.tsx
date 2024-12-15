@@ -86,13 +86,13 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
     {
       title: "Account Information",
       fields: (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Account Type
             </label>
             <select
-              className="w-full px-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600] text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+              className="w-full px-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50 placeholder-neutral-400"
               value={formData.accountType}
               onChange={(e) => setFormData({ ...formData, accountType: e.target.value })}
             >
@@ -105,45 +105,46 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Account Balance (as of December 31 last year)
             </label>
             <div className="relative">
-              <span className="absolute left-3 top-2 text-[#999999]">$</span>
+              <span className="absolute left-3 top-2.5 text-neutral-400">$</span>
               <input
                 type="number"
-                className="w-full pl-8 pr-3 py-2 border border-[#cccccc] rounded-md shadow-sm focus:ring-[#ffe600] focus:border-[#ffe600] text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+                className="w-full pl-8 pr-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50 placeholder-neutral-400"
                 value={formData.balance || ""}
                 onChange={(e) => setFormData({ ...formData, balance: parseFloat(e.target.value) || 0 })}
+                placeholder="0.00"
               />
             </div>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Registration Type
             </label>
-            <div className="flex space-x-4">
+            <div className="flex space-x-6">
               <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  className="form-radio text-[#ffe600] border-[#333333] dark:border-[#ffffff] focus:ring-[#ffe600] dark:focus:ring-[#ffe600]"
+                  className="form-radio text-primary border-neutral-300 focus:ring-primary"
                   name="registrationType"
                   value="individual"
                   checked={formData.registrationType === "individual"}
                   onChange={(e) => setFormData({ ...formData, registrationType: e.target.value as "individual" | "trust" })}
                 />
-                <span className="ml-2 text-[#333333] dark:text-[#ffffff]">Individual</span>
+                <span className="ml-2 text-neutral-900">Individual</span>
               </label>
               <label className="inline-flex items-center">
                 <input
                   type="radio"
-                  className="form-radio text-[#ffe600] border-[#333333] dark:border-[#ffffff] focus:ring-[#ffe600] dark:focus:ring-[#ffe600]"
+                  className="form-radio text-primary border-neutral-300 focus:ring-primary"
                   name="registrationType"
                   value="trust"
                   checked={formData.registrationType === "trust"}
                   onChange={(e) => setFormData({ ...formData, registrationType: e.target.value as "individual" | "trust" })}
                 />
-                <span className="ml-2 text-[#333333] dark:text-[#ffffff]">Trust</span>
+                <span className="ml-2 text-neutral-900">Trust</span>
               </label>
             </div>
           </div>
@@ -153,25 +154,25 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
     {
       title: "Original Owner Information",
       fields: (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Original Owner&apos;s Date of Birth
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+              className="w-full px-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50"
               value={formData.originalOwnerBirthDate}
               onChange={(e) => setFormData({ ...formData, originalOwnerBirthDate: e.target.value })}
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Original Owner&apos;s Date of Death
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+              className="w-full px-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50"
               value={formData.originalOwnerDeathDate}
               onChange={(e) => setFormData({ ...formData, originalOwnerDeathDate: e.target.value })}
             />
@@ -182,13 +183,13 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
     {
       title: "Beneficiary Information",
       fields: (
-        <div className="space-y-4">
+        <div className="space-y-6">
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Beneficiary Type
             </label>
             <select
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+              className="w-full px-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50 placeholder-neutral-400"
               value={formData.beneficiaryType}
               onChange={(e) => setFormData({ ...formData, beneficiaryType: e.target.value })}
             >
@@ -201,12 +202,12 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             </select>
           </div>
           <div>
-            <label className="block text-sm font-medium text-[#333333] dark:text-[#ffffff] mb-1">
+            <label className="block text-sm font-medium text-neutral-900 mb-2">
               Beneficiary&apos;s Date of Birth
             </label>
             <input
               type="date"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff]"
+              className="w-full px-3 py-2.5 border border-neutral-200 rounded-md shadow-sm focus:ring-primary focus:border-primary text-neutral-900 bg-neutral-50"
               value={formData.beneficiaryBirthDate}
               onChange={(e) => setFormData({ ...formData, beneficiaryBirthDate: e.target.value })}
             />
@@ -245,9 +246,9 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
   };
 
   return (
-    <BankingCard>
-      <div className="p-6">
-        <h2 className="text-2xl font-semibold text-[#333333] dark:text-[#ffffff] mb-6">
+    <BankingCard className="w-full max-w-3xl mx-auto">
+      <div className="p-8 bg-neutral-50">
+        <h2 className="text-2xl font-semibold text-neutral-900 mb-8">
           RMD Calculator
         </h2>
         <div className="relative pb-12">
@@ -255,21 +256,28 @@ export const RMDCalculator = ({ onCalculate, initialData }: RMDCalculatorProps) 
             steps={steps.map(s => s.title)}
             currentStep={currentStep}
             onStepClick={setCurrentStep}
+            className="max-w-2xl mx-auto"
           />
         </div>
         <div className="mt-8">
-          {steps[currentStep].fields}
+          <div className="max-w-lg mx-auto space-y-6">
+            {steps[currentStep].fields}
+          </div>
         </div>
-        <div className="mt-8 flex justify-between">
+        <div className="mt-8 flex justify-between max-w-lg mx-auto">
           <button
-            className="px-4 py-2 text-sm font-medium text-[#333333] dark:text-[#333333] bg-[#ffffff] dark:bg-[#ffffff] border border-[#cccccc] dark:border-[#cccccc] rounded-md shadow-sm hover:bg-[#cccccc] dark:hover:bg-[#cccccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffe600]"
+            className="px-6 py-2 text-sm font-medium text-neutral-500 bg-neutral-50 border border-neutral-200 rounded-md shadow-sm hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
             onClick={handleBack}
             disabled={currentStep === 0}
           >
             Back
           </button>
           <button
-            className="px-4 py-2 text-sm font-medium text-[#333333] dark:text-[#333333] bg-[#ffe600] dark:bg-[#ffe600] border border-transparent rounded-md shadow-sm hover:bg-[#cccccc] dark:hover:bg-[#cccccc] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#ffe600] disabled:opacity-50 disabled:cursor-not-allowed"
+            className={`px-6 py-2 text-sm font-medium ${
+              isStepValid()
+                ? 'text-neutral-900 bg-primary hover:bg-primary-dark shadow-lg'
+                : 'text-neutral-400 bg-neutral-200'
+            } border border-transparent rounded-md transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed`}
             onClick={handleNext}
             disabled={!isStepValid()}
           >

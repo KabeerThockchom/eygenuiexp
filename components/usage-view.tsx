@@ -15,7 +15,7 @@ export const UsageView = ({
   const maxUsage = Math.max(...usages.map((usage) => usage.amount));
   const usageToHeight = scaleLinear().domain([0, maxUsage]).range([0, 150]);
   const color =
-    type === "electricity" ? "green" : type === "gas" ? "orange" : "blue";
+    type === "electricity" ? "primary" : type === "gas" ? "primary-dark" : "primary-light";
 
   return (
     <div className="md:max-w-[452px] max-w-[calc(100dvw-80px)] w-full pb-6 flex flex-col gap-4">
@@ -25,7 +25,7 @@ export const UsageView = ({
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
       >
-        <div className="text-zinc-500 text-sm">Average Usage</div>
+        <div className="text-neutral-500 text-sm">Average Usage</div>
         <div className="font-semibold">
           {`${(
             usages.reduce((acc, usage) => acc + usage.amount, 0) / 14
@@ -43,7 +43,7 @@ export const UsageView = ({
           transition={{ delay: 1 }}
         >
           {[100, 75, 50, 25, 0].map((label) => (
-            <div key={label} className="text-xs text-zinc-300 mb-3">
+            <div key={label} className="text-xs text-neutral-200 mb-3">
               {label}
             </div>
           ))}
@@ -57,9 +57,7 @@ export const UsageView = ({
             >
               <motion.div
                 key={`total-${usage.day}`}
-                className={`w-2 bg-${color}-${
-                  type === "electricity" ? 100 : 500
-                } rounded-md mt-auto`}
+                className={`w-2 bg-${color} rounded-md mt-auto`}
                 initial={{ height: 0 }}
                 animate={{ height: usageToHeight(usage.amount) }}
                 transition={{ delay: index * 0.05 }}
@@ -67,14 +65,14 @@ export const UsageView = ({
               {type === "electricity" && (
                 <motion.div
                   key={`clean-${usage.day}`}
-                  className={`absolute w-2 bg-${color}-500 rounded-md mt-auto bottom-5`}
+                  className={`absolute w-2 bg-primary-dark rounded-md mt-auto bottom-5`}
                   initial={{ height: 0 }}
                   animate={{ height: usageToHeight(usage.clean) }}
                   transition={{ delay: 0.3 + index * 0.05 }}
                 />
               )}
               <motion.div
-                className="text-xs text-zinc-500"
+                className="text-xs text-neutral-400"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
               >
@@ -91,24 +89,21 @@ export const UsageView = ({
           transition={{ delay: 1 }}
         >
           <div className="flex flex-row gap-2 items-center">
-            <div className={`size-3 bg-${color}-100 rounded-sm`} />
-            <div className="text-xs text-zinc-500">Total</div>
+            <div className={`size-3 bg-${color} rounded-sm`} />
+            <div className="text-xs text-neutral-400">Total</div>
           </div>
           {type === "electricity" && (
             <div className="flex flex-row gap-2 items-center">
-              <div className={`size-3 dark:bg bg-${color}-500 rounded-sm`} />
-              <div className="text-xs text-zinc-500">Clean</div>
+              <div className={`size-3 bg-primary-dark rounded-sm`} />
+              <div className="text-xs text-neutral-400">Clean</div>
             </div>
           )}
         </motion.div>
       </div>
 
-      <div className="hidden bg-blue-500" />
-      <div className="hidden bg-green-500" />
-      <div className="hidden bg-orange-500" />
-      <div className="hidden bg-blue-100" />
-      <div className="hidden bg-green-100" />
-      <div className="hidden bg-orange-100" />
+      <div className="hidden bg-primary" />
+      <div className="hidden bg-primary-dark" />
+      <div className="hidden bg-primary-light" />
     </div>
   );
 };

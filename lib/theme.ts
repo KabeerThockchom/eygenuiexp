@@ -1,32 +1,76 @@
-export const theme = {
-  colors: {
+// Color schemes
+const colorSchemes = {
+  eyYellow: {
     primary: {
-      main: "#333333", // EY dark gray
-      light: "#999999", // EY light gray
-      dark: "#000000", // Darker shade for depth
-      contrast: "#FFFFFF",
-    },
-    secondary: {
-      main: "#FFE600", // EY yellow
-      light: "#FFF133", // Lighter yellow
-      dark: "#E6CF00", // Darker yellow
-      contrast: "#333333", // Dark text for contrast on yellow
+      main: "#FFE600",
+      dark: "#E6CF00",
+      light: "#FFF173",
+      contrast: "#333333",
     },
     neutral: {
       50: "#FFFFFF",
       100: "#F5F5F5",
       200: "#CCCCCC",
-      300: "#B3B3B3",
-      400: "#999999",
-      500: "#808080",
-      600: "#666666",
-      700: "#4D4D4D",
-      800: "#333333",
-      900: "#1A1A1A",
+      300: "#999999",
+      400: "#666666",
+      500: "#333333",
+      600: "#222222",
+      700: "#1A1A1A",
+      800: "#0F0F0F",
+      900: "#000000",
     },
+  },
+  eyBlue: {
+    primary: {
+      main: "#00A3E0",
+      dark: "#0082B3",
+      light: "#33B5E6",
+      contrast: "#FFFFFF",
+    },
+    neutral: {
+      50: "#FFFFFF",
+      100: "#F5F5F5",
+      200: "#CCCCCC",
+      300: "#999999",
+      400: "#666666",
+      500: "#333333",
+      600: "#222222",
+      700: "#1A1A1A",
+      800: "#0F0F0F",
+      900: "#000000",
+    },
+  },
+  eyGreen: {
+    primary: {
+      main: "#2AC420",
+      dark: "#229C1A",
+      light: "#55D04D",
+      contrast: "#FFFFFF",
+    },
+    neutral: {
+      50: "#FFFFFF",
+      100: "#F5F5F5",
+      200: "#CCCCCC",
+      300: "#999999",
+      400: "#666666",
+      500: "#333333",
+      600: "#222222",
+      700: "#1A1A1A",
+      800: "#0F0F0F",
+      900: "#000000",
+    },
+  },
+};
+
+// Select the active color scheme
+const activeColorScheme = colorSchemes.eyBlue;
+
+export const theme = {
+  colors: {
+    ...activeColorScheme,
     error: "#FF3333",
-    warning: "#FFE600", // Using EY yellow for warning
-    info: "#999999", // Using EY light gray for info
+    warning: activeColorScheme.primary.main,
+    info: activeColorScheme.neutral[300],
   },
   typography: {
     fontFamily: {
@@ -34,7 +78,7 @@ export const theme = {
     },
     fontSize: {
       xs: "0.75rem",
-      sm: "0.875rem",
+      sm: "0.875rem", 
       base: "1rem",
       lg: "1.125rem",
       xl: "1.25rem",

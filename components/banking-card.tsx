@@ -7,8 +7,8 @@ interface BankingCardProps {
 
 export const BankingCard = ({ children, className = "" }: BankingCardProps) => {
   return (
-    <div className={`#ffe600 rounded-xl shadow-sm border border-gray-200 ${className}`}>
+    <div className={`bg-white rounded-xl shadow-sm border border-neutral-200 overflow-hidden ${className}`}>
       {children}
     </div>
   );
-}; 
+};

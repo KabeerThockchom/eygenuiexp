@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { theme } from "@/lib/theme";
 import { ReactNode } from "react";
 
 interface BankingCardProps {
@@ -17,28 +16,21 @@ export const BankingCard = ({
 }: BankingCardProps) => {
   const variants = {
     default: {
-      background: theme.colors.neutral[50],
-      border: `1px solid ${theme.colors.neutral[200]}`,
+      className: "bg-neutral-50 border border-neutral-200",
     },
     highlighted: {
-      background: `linear-gradient(135deg, ${theme.colors.primary.main}, ${theme.colors.primary.dark})`,
-      border: "none",
+      className: "bg-gradient-to-br from-primary to-primary-dark",
     },
     warning: {
-      background: `linear-gradient(135deg, ${theme.colors.warning}, ${theme.colors.error})`,
-      border: "none",
+      className: "bg-gradient-to-br from-warning to-error",
     },
   };
 
   return (
     <motion.div
-      className={`rounded-xl shadow-lg overflow-hidden ${className}`}
+      className={`rounded-xl shadow-lg overflow-hidden p-8 ${variants[variant].className} ${className}`}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      style={{
-        ...variants[variant],
-        padding: theme.spacing.xl,
-      }}
     >
       {children}
     </motion.div>
